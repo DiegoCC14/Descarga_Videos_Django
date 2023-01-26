@@ -1,0 +1,114 @@
+<html class="desktop mbr-site-loaded">
+    <head>
+        
+        {% load static %}
+
+        <title>Descarga Videos</title>
+        
+        <link rel="stylesheet" href= "{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/style_002.css' %}">
+        <link rel="stylesheet" href="{% static 'css/css.css' %}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <link rel="stylesheet" href="{% static 'css/css_002.css' %}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <link rel="stylesheet" href="{% static 'css/mbr-additional.css' %}" type="text/css">
+
+    </head>
+
+    <body>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script src="{% static 'js/index.js' %}"></script>
+        
+        <script>
+            var CSRF_TOKEN = '{{ csrf_token }}'    
+        </script>
+        
+        <section data-bs-version="5.1" class="header14 cid-sUi44yYF8T" id="header14-2y">
+            <div class="container">
+                
+                <div class="row">
+                    <div class="col-12 col-lg mt-5 py-5 mt-lg-0 pt-lg-0">
+                        <div class="text-wrapper">
+                            <h1 class="mbr-section-title mbr-fonts-style mb-4 display-2">
+                                Descarga Videos de Youtube
+                            </h1>
+                            <p class="mbr-text mbr-fonts-style display-7">
+                                App desarrollada con Python y Django para la descarga de videos, Playlist y Canales de Youtube
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <form action="{% url 'info_url' %}" id="form_info_url">
+
+                    <div class="mbr-section-btn">
+                        <input class="mbr-text mbr-fonts-style display-6 col-11 col-lg mt-3 py-2 mt-lg-0 pt-lg-0" type="text" placeholder="Url" id="url_ingresado_busqueda">
+
+                        <a class="btn btn-primary display-4" onclick="post_busqueda_videos()">
+                            Buscar</a>
+
+                    </div>
+                </form>
+
+            </div>
+        </section>
+
+
+        <section data-bs-version="5.1" class="features3 cid-sUd1kuqWFp" id="features3-1p">
+            
+            <div class="container" id="div_resultados">
+                
+                <div class="mbr-section-head">
+                    <h4 class="mbr-section-title mbr-fonts-style align-left mb-0 display-2">
+                        Resultados
+                    </h4>
+                </div>
+
+                <div class="row mt-5" id="div_resultados_videos">
+                    
+                    <form action="{% url 'download_video' %}" id="form_download_video">
+
+                        <div class="item features-image сol-12 col-md-6 col-lg-4" id="item_video_info">
+                            <div heigth="60%">
+                                <div class="element-wrapper">
+                                    
+                                    <img src="https://i.ytimg.com/vi/MPLN1ahXgcs/sddefault.jpg?v=601d6e64" width="100%">
+
+                                    <h5 class="item-title mbr-fonts-style">
+                                        Nombre Video Nombre Video Nombre Video Nombre Video Nombre Video Nombre Video
+                                    </h5>
+                                        
+                                    <a class="btn btn-success item-btn display-5" target="_blank" onclick="descargar_video( this)">Descargar</a>                                
+
+                                </div>  
+                            </div>
+                            
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section data-bs-version="5.1" class="footer4 cid-sUhtfCFWgK" once="footers" id="footer4-29">
+            <div class="container">
+                <div class="row mbr-white">
+
+                    <div class="col-12 col-md-6 col-lg-8">
+                        <h5 class="mbr-section-subtitle mbr-fonts-style mb-1 display-8">
+                            App desarrollada por Diego Cazon
+                        </h5>
+                        <ul class="list mbr-fonts-style display-4">
+                            <li class="mbr-text item-wrap">Contactos:</li>
+                            <li class="mbr-text item-wrap">- diego.xmen123@gmail.com</li>
+                            <li class="mbr-text item-wrap">- 2615055266</li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
